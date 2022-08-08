@@ -1,3 +1,8 @@
+import Strategy.Comportamento;
+import Strategy.ComportamentoAgressivo;
+import Strategy.ComportamentoDefensivo;
+import Strategy.ComportamentoNormal;
+import Strategy.Robo;
 import singleton.SingletonEager;
 import singleton.SingletonLazy;
 import singleton.SingletonLazyHolder;
@@ -22,6 +27,23 @@ public class Testes {
 		System.out.println(lazyHolder);
 		lazyHolder = SingletonLazyHolder.getInstancia();
 		System.out.println(lazyHolder);
+		
+		// Strategy
+		
+		Comportamento defensivo = new ComportamentoDefensivo();
+		Comportamento normal = new ComportamentoNormal();
+		Comportamento agressivo = new ComportamentoAgressivo();
+		
+		Robo robo = new Robo();
+		robo.setComportamento(normal);
+		robo.mover();
+		robo.mover();
+		robo.setComportamento(defensivo);
+		robo.mover();
+		robo.setComportamento(agressivo);
+		robo.mover();
+		robo.mover();
+		robo.mover();
 	}
 
 }
