@@ -3,6 +3,7 @@ import Strategy.ComportamentoAgressivo;
 import Strategy.ComportamentoDefensivo;
 import Strategy.ComportamentoNormal;
 import Strategy.Robo;
+import facade.Facade;
 import singleton.SingletonEager;
 import singleton.SingletonLazy;
 import singleton.SingletonLazyHolder;
@@ -44,6 +45,10 @@ public class Testes {
 		robo.mover();
 		robo.mover();
 		robo.mover();
+		
+		//Facade
+		Facade facade = new Facade();
+		facade.migrarCliente("Adriano", "357040741");
 	}
 
 }
